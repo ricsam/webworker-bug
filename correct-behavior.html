@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WebWorker test</title>
+  <script>
+    var workerA = new Worker('./workerA.js', {
+      type: 'module',
+    });
+    var workerB = new Worker('./workerB.js', {
+      type: 'module',
+    });
+    var workerB = new Worker('./workerB.js', {
+      type: 'module',
+    });
+  </script>
+</head>
+<body>
+  Displays two errors when failing to import something in a child directory, i.e. <pre style="display: inline;">import './non-existing-dir/nonexisting-file.js';</pre> because server responds with the 404 page 
+</body>
+
+</html>

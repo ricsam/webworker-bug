@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebWorker test</title>
+    <script>
+    var workerA = new Worker('./workerA.js', {
+      type: 'module',
+    });
+    var workerB = new Worker('./workerB.js', {
+      type: 'module',
+    });
+    var workerC = new Worker('./workerC.js', {
+      type: 'module',
+    });
+  </script>
+    <style>
+    pre {
+      display: inline;
+    }
+    * + * {
+      margin: 1rem 0;
+    }
+    section {
+      padding: 1rem;
+    }
+    section div > * + * {
+      margin: 1rem 0;
+    }
+  </style>
+  </head>
+  <body>
+
+    <section><div>When running <pre>yarn run no-bug</pre> error is thrown because in <pre>serve -s</pre> launches the server in SPA mode and will
+        respond to any path (and respond with 404)</div>
+      <div>When running <pre>yarn run bug</pre> no error is thrown because in
+        <pre>serve</pre> tries to find the file on disk but fails and thus does
+        not respond (I think)</div></section>
+
+    <section>Observe however how the network request is 404</section>
+
+    <section>On this page only one error is thrown when running <pre>yarn run bug</pre> and two errors when running <pre>yarn run no-bug</pre></section>
+    <section>
+      Either way, expects <b>two</b> errors to be displayed in the console like <a
+        href="correct-behavior.html">this</a>
+    </section>
+
+  </body>
+
+
+
+</html>

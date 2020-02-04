@@ -1,0 +1,17 @@
+{
+  "name": "webworker-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exists.js",
+  "scripts": {
+    "start": "yarn run bug",
+    "no-bug": "serve -s .",
+    "bug": "serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^11.3.0"
+  }
+}
